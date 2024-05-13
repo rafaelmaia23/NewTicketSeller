@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NewTicketSeller.Domain.Models;
 
@@ -32,4 +28,7 @@ public class Address
     [StringLength(8, ErrorMessage = "Max characters permited: 8")]
     [RegularExpression(@"^\d{5}-\d{3}$", ErrorMessage = "Invalid postcode.")]
     public string PostalCode { get; set; } = string.Empty;
+    [ForeignKey("Cinema")]
+    public int CinemaId { get; set; }
+    public Cinema Cinema { get; set; }
 }
