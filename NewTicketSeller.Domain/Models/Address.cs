@@ -30,5 +30,5 @@ public class Address
     public string PostalCode { get; set; } = string.Empty;
     [ForeignKey("Cinema")]
     public int CinemaId { get; set; }
-    public Cinema Cinema { get; set; }
+    public Cinema? Cinema { get; set; }
 }

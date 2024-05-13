@@ -10,9 +10,9 @@ public class Cinema
     public int Id { get; set; }
     [Required]
     [StringLength(100, ErrorMessage = "Max characters permited: 100")]
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
     [Required]
     [ForeignKey("Address")]
     public int AddressId { get; set; }
-    public Address Address { get; set; }
+    public Address? Address { get; set; }
 }

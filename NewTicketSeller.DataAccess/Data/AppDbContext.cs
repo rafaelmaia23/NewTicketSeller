@@ -22,6 +22,6 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Address>()
             .HasOne(address => address.Cinema)
             .WithOne(cinema => cinema.Address)
-            .HasForeignKey<Cinema>(cinema => cinema.Address);
+            .HasForeignKey<Cinema>(cinema => cinema.AddressId);
     }
 }
